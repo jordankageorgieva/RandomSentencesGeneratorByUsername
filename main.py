@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import random
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+names = ["Peter", "Michell", "Jane", "Steve" ]
+places = ["Sofia", "Plovdiv", "Varna", "Burgas" ]
+verbs = ["eats", "holds", "sees", "plays with", "brings" ]
+nouns = ["stones", "cake", "apple", "laptop", "bikes" ]
+adverbs = ["slowly", "diligently", "warmly", "sadly", "rapidly" ]
+details = ["near the river", "at home", "in the park" ]
 
+def get_random_word(words):
+    return random.choice(words)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+while True:
+    random_name = get_random_word(names)
+    random_places = get_random_word(places)
+    random_verbs = get_random_word(verbs)
+    random_nouns = get_random_word(nouns)
+    random_adverbs = get_random_word(adverbs)
+    random_details = get_random_word(details)
 
+    print(f"{random_name} from {random_places} {random_adverbs} {random_verbs} {random_nouns}")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    user_input = input("Click [Enter] to generate a new one or type 'exit' to quit: ")
+    if user_input.lower() == "exit" or user_input.lower() == "q":
+        break
